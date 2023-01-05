@@ -1,0 +1,19 @@
+.search {
+    cursor: pointer;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    transition: all 1s ease;
+}
+
+.searchName {
+    display: flex;
+    justify-content: space-between;
+    @media(max-width: 410px) {
+        flex-direction: column;
+    }
+    &__phone {
+        margin-top: 31px;
+        color: black;
+    }
+}

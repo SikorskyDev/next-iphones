@@ -1,0 +1,19 @@
+.counter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.minus {
+    cursor: pointer;
+}
+
+.plus{
+    cursor: pointer;
+}
+
+
+.remove {
+    cursor: pointer;
+}
