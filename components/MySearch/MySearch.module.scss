@@ -9,11 +9,30 @@
 .searchName {
     display: flex;
     justify-content: space-between;
-    @media(max-width: 410px) {
+    @media (max-width: 410px) {
         flex-direction: column;
     }
     &__phone {
         margin-top: 31px;
         color: black;
     }
+}
+
+.searchBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.memory__items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btnSearch{
+    display: flex;
+    justify-content: center;
 }

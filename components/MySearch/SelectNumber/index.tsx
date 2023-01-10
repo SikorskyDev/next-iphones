@@ -20,7 +20,7 @@ export default function SelectNumber() {
         <>
             <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
                 <InputLabel id="demo-simple-select-standard-label">
-                    номер:
+                    iPhone:
                 </InputLabel>
                 <Select
                     labelId="demo-simple-select-standard-label"

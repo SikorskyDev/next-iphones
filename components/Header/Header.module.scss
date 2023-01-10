@@ -2,20 +2,52 @@
 
 .header {
     background-color: $background2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    @media (max-width: 348px) {
+        justify-content: space-evenly;
+    }
 }
-
+.navLinksContainer {
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    flex: 0 1 auto;
+    align-items: center;
+    @media (max-width: 864px) {
+        display: none;
+    }
+}
+.vertLine {
+    width: 1px;
+    height: 30px;
+    background-color: white;
+    flex: 1 1 auto;
+    @media (max-width: 864px) {
+        display: none;
+    }
+}
 .navLinks {
     color: $textColor1;
     cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
     &:hover {
         color: $textColor2;
+        background-color: rgba($color: #2f2f2f, $alpha: 0.3);
     }
-    @media(max-width: 767px) {
-        margin-bottom: 40px;
+    @media (max-width: 864px) {
         text-align: center;
-        &:hover {
-            color: white;
-        }
+        border-radius: 0px;
     }
 }
 .logo {
@@ -32,4 +64,25 @@
     &:hover {
         color: $textColor2;
     }
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+
+    @media (max-width: 864px) {
+        display: flex;
+    }
+}
+
+.burgerList {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 70px 0 40px;
+    align-items: center;
+    background-color: $background2;
+    gap: 30px;
+    font-size: 20px;
 }

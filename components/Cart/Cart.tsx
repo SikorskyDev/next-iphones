@@ -1,4 +1,4 @@
-import { Button, Modal, Navbar } from "flowbite-react";
+import { Button, Modal } from "flowbite-react";
 import React, { useState } from "react";
 import { HiShoppingCart } from "react-icons/hi";
 import { useSelector } from "react-redux";
@@ -12,7 +12,7 @@ const Cart: React.FC = () => {
     );
 
     return (
-        <div className="flex md:order-2">
+        <div className="flex">
             <Button
                 color="dark"
                 pill={true}
@@ -31,7 +31,6 @@ const Cart: React.FC = () => {
                     <CartItems />
                 </Modal.Body>
             </Modal>
-            <Navbar.Toggle />
         </div>
     );
 };
