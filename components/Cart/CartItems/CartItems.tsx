@@ -1,14 +1,23 @@
-import { Table } from "flowbite-react";
+import { Button, Table } from "flowbite-react";
 import React from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
+import { removeAllItem } from "../../../store/cart/cartSlice";
+import { RootState, useAppDispatch } from "../../../store/store";
 import CartItem from "./CartItem/CartItem";
+import InputCustomerData from "./CartItem/InputCustomerData/InputCustomerData";
 import stl from "./CartItems.module.scss";
 
 const CartItems = () => {
+    const [open, setOpen] = React.useState(false);
+    const dispatch = useAppDispatch();
     const { items, totalPrice } = useSelector(
         (state: RootState) => state.CartSlice
     );
+
+    const handleTotalBuy = () => {setOpen(true)};
+    const handleClearCart = () => {
+        dispatch(removeAllItem());
+    };
 
     return (
         <>
@@ -46,12 +55,37 @@ const CartItems = () => {
             )}
 
             {totalPrice > 0 && (
-                <div className={stl.totalCost}>
-                    <div className={stl.totalCost__title}>
-                        Загальна вартість:
+                <>
+                    <div className={stl.totalCost}>
+                        <div className={stl.totalCost__title}>
+                            Загальна вартість:
+                        </div>
+                        <div className={stl.totalCost__cost}>
+                            {totalPrice} ₴
+                        </div>
                     </div>
-                    <div className={stl.totalCost__cost}>{totalPrice} ₴</div>
-                </div>
+                    <div className={stl.cleanAndBuy}>
+                        <div className={stl.clean}>
+                            <Button
+                                gradientMonochrome="failure"
+                                size={"sm"}
+                                onClick={handleClearCart}
+                            >
+                                ОЧИСТИТИ КОРЗИНУ
+                            </Button>
+                        </div>
+                        <div className={stl.totalBuy}>
+                            <Button
+                                gradientMonochrome="success"
+                                size={"sm"}
+                                onClick={handleTotalBuy}
+                            >
+                                ПРИДБАТИ ВИБРАНІ ТОВАРИ
+                            </Button>
+                        </div>
+                    </div>
+                    <InputCustomerData open={open} setOpen={setOpen} />
+                </>
             )}
         </>
     );
