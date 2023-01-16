@@ -46,7 +46,7 @@ export default function InputCustomerData({
     });
 
     const onSubmit = handleSubmit((data) => {
-        alert(JSON.stringify({data, items}));
+        alert(JSON.stringify({ data, items }));
         reset();
     });
 
@@ -68,6 +68,7 @@ export default function InputCustomerData({
                         <label>
                             Ім'я:
                             <input
+                                placeholder="Степан"
                                 {...register("firstName", {
                                     required: "поле обов'язкове для заповнення",
                                     minLength: {
@@ -91,6 +92,7 @@ export default function InputCustomerData({
                         <label>
                             Прізвище:
                             <input
+                                placeholder="Бандера"
                                 {...register("lastName", {
                                     required: "поле обов'язкове для заповнення",
                                     minLength: {
@@ -112,6 +114,7 @@ export default function InputCustomerData({
                         <label>
                             Номер телефону:
                             <input
+                            placeholder="0931234567"
                                 type="number"
                                 {...register("phone", {
                                     required: "поле обов'язкове для заповнення",
@@ -134,6 +137,7 @@ export default function InputCustomerData({
                         <label>
                             Пошта:
                             <input
+                            placeholder="stepan@gmail.com"
                                 {...register("email", {
                                     required: "поле обов'язкове для заповнення",
                                     minLength: {
